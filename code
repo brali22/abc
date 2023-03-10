@@ -32,6 +32,43 @@ for col_name in df1.columns.values[1:100]:
 # ax.plot(df.Date, df.Woodproduct)
 
 
+import pandas as pd
+import numpy as np
+import os
+import matplotlib
+import matplotlib.pyplot as plt
+import datetime
+
+df = pd.read_csv('PPI.csv')
+df.dropna(how='all', axis=1, inplace=True) 
+df
+
+abc = df1.groupby(by=['Series ID'])['PPI'].mean()
+abc
+
+
+# df1 = df.melt(id_vars='Series ID', var_name='Date', value_name='PPI')
+# abc=pd.DataFrame()
+# df2 = df1.pivot(index='Date', columns='Series ID', values='PPI')
+# df3 = df2.reset_index().rename_axis(None, axis=1)
+# df3
+
+# df3.melt(by)
+
+# for col_name in df3.columns.values[1:]:
+#      df3.plot(x='Date', y=[col_name])
+
+# col_list = list(df3.columns)
+# col_list
+
+
+
+# fig1 = plt.figure()
+# for col, i in zip(col_list[1:], range(1, 10)):
+#     ax1=fig1.add_subplot(10,1,i)
+#     ax1.plot(df3['Date'], df3[col])
+#     ax1.set_title(col)
+
 
 # x = df['Wood product (NAICS = 321)']
 
